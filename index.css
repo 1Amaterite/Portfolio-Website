@@ -342,60 +342,150 @@ body::after {
 }
 
 /* Screen Image Side: Styled as a Floating browser window with depth */
+/* Screen Image Side: Styled as a Floating browser window with depth */
 .card-image {
-    flex: 0.9;
-    height: 75%;
-    max-width: 50%;
+    flex: 1.1;
+    max-width: 55%;
+    aspect-ratio: 16 / 10;
     border-radius: 16px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background-color: #121318;
-    box-shadow: -20px 25px 50px rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: #ffffff;
+    box-shadow: -20px 25px 50px rgba(0, 0, 0, 0.5);
     position: relative;
     display: flex;
     flex-direction: column;
     
     /* 3D Perspective Tilt for a premium mockup showcase */
-    transform: perspective(1000px) rotateY(-10deg) rotateX(3deg) translateZ(0);
+    transform: perspective(1000px) rotateY(-8deg) rotateX(2deg) translateZ(0);
     transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.8s ease;
 }
 
-/* MacOS browser dots simulation */
-.card-image::before {
-    content: '';
-    display: block;
-    height: 28px;
+/* MacOS browser header */
+.browser-header {
+    display: grid;
+    grid-template-columns: 80px 1fr 80px;
+    align-items: center;
+    height: 36px;
     width: 100%;
-    background-color: #18191f;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    background-image: 
-        radial-gradient(circle, #ef4444 3.5px, transparent 4px),
-        radial-gradient(circle, #f59e0b 3.5px, transparent 4px),
-        radial-gradient(circle, #10b981 3.5px, transparent 4px);
-    background-size: 14px 14px;
-    background-repeat: no-repeat;
-    background-position: 14px 8px, 32px 8px, 50px 8px;
+    background-color: #f1f2f5; /* Light grey chrome bar */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0 1rem;
     flex-shrink: 0;
 }
 
-.card-image img {
+/* Simulated traffic lights with micro-interactions */
+.browser-dots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.browser-dots .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+
+.browser-dots .dot.red { background-color: #ff5f56; }
+.browser-dots .dot.yellow { background-color: #ffbd2e; }
+.browser-dots .dot.green { background-color: #27c93f; }
+
+/* Interactive hover dots (adding inner symbols in macOS style on card hover) */
+.project-card:hover .browser-dots .dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5px;
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.55);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.project-card:hover .browser-dots .dot.red::after { content: '×'; opacity: 1; font-size: 7px; top: 45%; }
+.project-card:hover .browser-dots .dot.yellow::after { content: '–'; opacity: 1; font-size: 6px; }
+.project-card:hover .browser-dots .dot.green::after { content: '+'; opacity: 1; font-size: 5px; }
+
+/* Simulated Address Bar */
+.browser-address {
+    grid-column: 2;
+    justify-self: center;
+    background-color: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    color: #6b7280;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 400;
+    padding: 3px 2.2rem;
+    border-radius: 6px;
+    letter-spacing: 0.3px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 240px;
+    user-select: none;
+}
+
+/* Browser Inner Webpage Area */
+.browser-content {
+    position: relative;
+    flex-grow: 1;
     width: 100%;
-    height: calc(100% - 28px);
-    object-fit: cover;
+    height: calc(100% - 36px);
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+/* Soft inner bezel shadow */
+.browser-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.04);
+    pointer-events: none;
+}
+
+.browser-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     object-position: top center;
-    filter: brightness(0.95) contrast(1.02);
-    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+    background-color: #ffffff;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Dedicated crop style for Card 2 to remove the native header */
+.browser-content.crop-native-bar img {
+    height: 103.5%; /* Scale up slightly to push the native title bar out of bounds */
+    object-fit: cover;
+    object-position: bottom center;
+    transform-origin: bottom center;
 }
 
 /* Hover Zoom & Perspective Shift */
 .project-card:hover .card-image {
-    transform: perspective(1000px) rotateY(-4deg) rotateX(1deg) translateZ(15px);
-    box-shadow: -25px 35px 60px rgba(139, 92, 246, 0.2);
+    transform: perspective(1000px) rotateY(-2deg) rotateX(1deg) translateZ(20px);
+    box-shadow: -25px 35px 60px rgba(139, 92, 246, 0.15);
 }
 
 .project-card:hover .card-image img {
-    transform: scale(1.03);
-    filter: brightness(1.05) contrast(1.05);
+    transform: scale(1.025);
+}
+
+/* Keep crop scaling consistent during hover for card 2 */
+.project-card:hover .browser-content.crop-native-bar img {
+    transform: scale(1.035);
 }
 
 /* --- 7. Interactive Timeline / Experience --- */
@@ -541,10 +631,10 @@ body::after {
     }
     
     .project-card {
-        flex-direction: column-reverse;
+        flex-direction: column; /* Text at top, mockup screenshot below */
         height: auto;
-        padding: 4rem 2rem;
-        gap: 3rem;
+        padding: 3.5rem 2.5rem;
+        gap: 2.5rem;
         align-items: flex-start;
     }
     
@@ -555,7 +645,8 @@ body::after {
     .card-image {
         max-width: 100%;
         width: 100%;
-        height: 300px;
+        height: auto;
+        aspect-ratio: 16 / 10;
         transform: none !important; /* Disable perspective on mobile */
     }
     
