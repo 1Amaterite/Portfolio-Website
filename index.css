@@ -1,0 +1,587 @@
+/* ==========================================================================
+   PREMIUM CINEMATIC DESIGN SYSTEM (Pete Navato Portfolio)
+   ========================================================================== */
+
+/* --- 1. Core Tokens & Variables --- */
+:root {
+    --bg-color: #08090c;
+    --text-color: #f3f4f6;
+    --text-muted: #9ca3af;
+    --accent-color: #8b5cf6; /* Electric Violet */
+    --accent-glow: rgba(139, 92, 246, 0.15);
+    --accent-gradient: linear-gradient(135deg, #a78bfa 0%, #3b82f6 100%);
+    --card-bg: rgba(17, 18, 25, 0.65);
+    --border-color: rgba(255, 255, 255, 0.05);
+    --glow-color: rgba(139, 92, 246, 0.3);
+    
+    /* Layout */
+    --section-padding: 10rem 2rem;
+    --container-max-width: 1200px;
+}
+
+/* Lenis smooth scrolling setup */
+html.lenis, html.lenis body {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+    background: #1e2029;
+    border-radius: 5px;
+    border: 2px solid var(--bg-color);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #2e303f;
+}
+
+/* --- 2. Global Resets --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Premium Background Glow Orbs */
+body::before {
+    content: '';
+    position: fixed;
+    top: -15%;
+    left: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+    z-index: -1;
+    filter: blur(80px);
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    bottom: -15%;
+    right: -10%;
+    width: 60vw;
+    height: 60vw;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+    z-index: -1;
+    filter: blur(80px);
+    pointer-events: none;
+}
+
+/* --- 3. Navigation Header --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5rem;
+    z-index: 1000;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border-color);
+    background-color: rgba(8, 9, 12, 0.6);
+    transition: padding 0.3s ease;
+}
+
+.logo {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    letter-spacing: 3px;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-link {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--accent-color);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.nav-link:hover {
+    color: var(--text-color);
+}
+
+/* --- 4. Hero Section (Apple Zoom-Out Experience) --- */
+.hero-section {
+    height: 300vh; /* Controlled scroll length */
+    position: relative;
+}
+
+.sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.visual-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-bg {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(8, 9, 12, 0.4), rgba(8, 9, 12, 0.8)), url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564');
+    background-size: cover;
+    background-position: center;
+    transform: scale(2.2); /* Initial scale state for zoom-out trigger */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 20%, var(--bg-color) 80%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    padding: 0 2rem;
+}
+
+.hero-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(3.5rem, 9vw, 7.5rem);
+    font-weight: 900;
+    line-height: 0.95;
+    letter-spacing: -3px;
+    margin-bottom: 2rem;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    color: var(--text-muted);
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+    letter-spacing: 0.5px;
+}
+
+/* --- 5. Layout and Typography --- */
+.section-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--section-padding);
+}
+
+.section-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 800;
+    margin-bottom: 4rem;
+    letter-spacing: -1px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 4px;
+    background: var(--accent-gradient);
+    border-radius: 2px;
+}
+
+/* About Section */
+.about-section {
+    position: relative;
+    z-index: 5;
+    background-color: var(--bg-color);
+}
+
+.about-text {
+    font-size: clamp(1.3rem, 2.5vw, 2.2rem);
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 1000px;
+    color: var(--text-color);
+    letter-spacing: -0.5px;
+}
+
+/* --- 6. Stacking Project Cards (Perspective Look) --- */
+.projects-section {
+    background-color: var(--bg-color);
+    position: relative;
+    z-index: 6;
+}
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+}
+
+.project-card {
+    height: 520px;
+    width: 100%;
+    border-radius: 32px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    position: sticky;
+    top: 15vh;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5rem;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+    border-color: rgba(139, 92, 246, 0.25);
+    box-shadow: 0 30px 60px rgba(139, 92, 246, 0.1);
+}
+
+/* Info Side */
+.card-info {
+    flex: 1.1;
+    max-width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card-info h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #ffffff 0%, #d1d5db 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card-info p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+/* Screen Image Side: Styled as a Floating browser window with depth */
+.card-image {
+    flex: 0.9;
+    height: 75%;
+    max-width: 50%;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: #121318;
+    box-shadow: -20px 25px 50px rgba(0, 0, 0, 0.7);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    /* 3D Perspective Tilt for a premium mockup showcase */
+    transform: perspective(1000px) rotateY(-10deg) rotateX(3deg) translateZ(0);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.8s ease;
+}
+
+/* MacOS browser dots simulation */
+.card-image::before {
+    content: '';
+    display: block;
+    height: 28px;
+    width: 100%;
+    background-color: #18191f;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background-image: 
+        radial-gradient(circle, #ef4444 3.5px, transparent 4px),
+        radial-gradient(circle, #f59e0b 3.5px, transparent 4px),
+        radial-gradient(circle, #10b981 3.5px, transparent 4px);
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+    background-position: 14px 8px, 32px 8px, 50px 8px;
+    flex-shrink: 0;
+}
+
+.card-image img {
+    width: 100%;
+    height: calc(100% - 28px);
+    object-fit: cover;
+    object-position: top center;
+    filter: brightness(0.95) contrast(1.02);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+/* Hover Zoom & Perspective Shift */
+.project-card:hover .card-image {
+    transform: perspective(1000px) rotateY(-4deg) rotateX(1deg) translateZ(15px);
+    box-shadow: -25px 35px 60px rgba(139, 92, 246, 0.2);
+}
+
+.project-card:hover .card-image img {
+    transform: scale(1.03);
+    filter: brightness(1.05) contrast(1.05);
+}
+
+/* --- 7. Interactive Timeline / Experience --- */
+.experience-section {
+    background-color: var(--bg-color);
+    position: relative;
+    z-index: 7;
+}
+
+.timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+/* The vertical timeline bar */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 200px;
+    top: 5px;
+    bottom: 5px;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--border-color), var(--accent-color), var(--border-color));
+}
+
+.timeline-item {
+    display: grid;
+    grid-template-columns: 160px 80px 1fr;
+    align-items: start;
+    position: relative;
+}
+
+.timeline-date {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    text-align: right;
+    padding-top: 2px;
+}
+
+/* Timeline dot node indicator */
+.timeline-item::after {
+    content: '';
+    grid-column: 2;
+    justify-self: center;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--bg-color);
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 10px var(--accent-glow);
+    z-index: 2;
+    margin-top: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.timeline-item:hover::after {
+    background-color: var(--accent-color);
+    transform: scale(1.3);
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+.timeline-details {
+    padding-left: 1rem;
+}
+
+.timeline-details h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.3px;
+}
+
+.timeline-details p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    font-weight: 300;
+}
+
+/* --- 8. Contact Section (Footer Call-To-Action) --- */
+.contact-section {
+    background-color: var(--bg-color);
+    position: relative;
+    z-index: 8;
+    background: radial-gradient(circle at center, rgba(139, 92, 246, 0.05) 0%, transparent 65%);
+}
+
+.contact-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 900;
+    max-width: 900px;
+    margin: 0 auto 3.5rem auto;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 1.3rem 3rem;
+    border-radius: 100px;
+    background: var(--accent-gradient);
+    color: white;
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 15px 30px rgba(139, 92, 246, 0.25);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.contact-button:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.4);
+}
+
+/* --- 9. Responsive Breakpoints --- */
+@media (max-width: 1024px) {
+    .header {
+        padding: 1.5rem 2.5rem;
+    }
+    .project-card {
+        padding: 0 3rem;
+    }
+}
+
+@media (max-width: 900px) {
+    :root {
+        --section-padding: 6rem 1.5rem;
+    }
+    
+    .header {
+        padding: 1.2rem 1.5rem;
+    }
+    .nav {
+        gap: 1.5rem;
+    }
+    
+    .project-card {
+        flex-direction: column-reverse;
+        height: auto;
+        padding: 4rem 2rem;
+        gap: 3rem;
+        align-items: flex-start;
+    }
+    
+    .card-info {
+        max-width: 100%;
+    }
+    
+    .card-image {
+        max-width: 100%;
+        width: 100%;
+        height: 300px;
+        transform: none !important; /* Disable perspective on mobile */
+    }
+    
+    .project-card:hover .card-image {
+        transform: none !important;
+    }
+    
+    /* Timeline Mobile adjustments */
+    .timeline::before {
+        left: 20px;
+    }
+    .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    .timeline-date {
+        text-align: left;
+        padding-left: 3rem;
+    }
+    .timeline-item::after {
+        grid-column: 1;
+        justify-self: start;
+        margin-left: 15px;
+        margin-top: -24px;
+    }
+    .timeline-details {
+        padding-left: 3rem;
+    }
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pete Navato | Portfolio & Resume</title>
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lenis Smooth Scroll CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <a href="#" class="logo">PORTFOLIO</a>
+        <nav class="nav">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        
+        <!-- Hero Section with Pinning Animation -->
+        <section class="hero-section">
+            <div class="sticky-container">
+                <div class="visual-wrapper">
+                    <!-- This will scale down like Apple's zoom-out effect -->
+                    <div class="hero-bg"></div>
+                    <div class="hero-overlay"></div>
+                </div>
+                <div class="hero-content">
+                    <h1 class="hero-title">HI<br>I'M PETE</h1>
+                    <p class="hero-subtitle">A 2nd year Information Systems Student at DLSU Manila.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Intro Section -->
+        <section id="about" class="about-section">
+            <div class="section-container">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-text">
+                    Information Systems student at De la Salle University. I am passionate about building 
+                    interactive web interfaces and exploring the intersection of technology and creativity.
+                    Outside coding, I play football, and I love music.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects Section (Stacking Cards) -->
+        <section id="projects" class="projects-section">
+            <div class="section-container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="project-list">
+                    <!-- Project Card 1 -->
+                    <div class="project-card" id="card-1">
+                        <!-- Changed 'card-content' to 'card-info' -->
+                        <div class="card-info">
+                            <h3>01 / Hair Salon Inventory System</h3>
+                            <p>Inventory management system for local hair salons.</p>
+                        </div>
+                        <div class="card-image">
+                            <img src="images/Inventory_System.png" alt="Hair Salon Inventory System Screenshot">
+                        </div>
+                    </div>
+                    
+                    <!-- Project Card 2 -->
+                    <div class="project-card" id="card-2">
+                        <!-- Changed 'card-content' to 'card-info' -->
+                        <div class="card-info">
+                            <h3>02 / Green Property Exchange</h3>
+                            <p>A property manager simulator using Java.</p>
+                        </div>
+                        <div class="card-image">
+                            <img src="images/Green_Property_Exchange.png" alt="Green Property Exchange Screenshot">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience / Timeline -->
+        <section id="experience" class="experience-section">
+            <div class="section-container">
+                <h2 class="section-title">Resume & Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <span class="timeline-date">2024 - Present</span>
+                        <div class="timeline-details">
+                            <h4>Lead Creative Developer</h4>
+                            <p>Building high-performance interactive websites.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="timeline-date">2022 - 2024</span>
+                        <div class="timeline-details">
+                            <h4>UI/UX Developer</h4>
+                            <p>Crafting sleek design systems and front-end architectures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact / Footer -->
+        <section id="contact" class="contact-section">
+            <div class="section-container">
+                <h2 class="contact-title">Let's build something exceptional.</h2>
+                <a href="mailto:your.email@domain.com" class="contact-button">Get In Touch</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scroll & Animation Engines -->
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom Logic -->
+    <script src="main.js"></script>
+</body>
+</html>
