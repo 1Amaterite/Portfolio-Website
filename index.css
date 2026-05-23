@@ -677,7 +677,7 @@ body::after {
 .timeline::before {
     content: '';
     position: absolute;
-    left: 200px;
+    left: 260px;
     top: 5px;
     bottom: 5px;
     width: 1px;
@@ -687,7 +687,7 @@ body::after {
 /* Active glow progress line, animated via GSAP */
 .timeline-progress-line {
     position: absolute;
-    left: 200px;
+    left: 260px;
     top: 5px;
     bottom: 5px;
     width: 2px;
@@ -700,7 +700,7 @@ body::after {
 
 .timeline-item {
     display: grid;
-    grid-template-columns: 160px 80px 1fr;
+    grid-template-columns: 220px 80px 1fr;
     align-items: start;
     position: relative;
     opacity: 0.6;
