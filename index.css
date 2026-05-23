@@ -579,8 +579,8 @@ body::after {
 }
 
 .project-card:hover .browser-content img {
-    /* Translate image upwards by a portion of its height to simulate page scrolling preview */
-    transform: translateY(-22%) scale(1.03);
+    /* Translate image upwards by exactly the overflow amount to align bottom edges without going out of frame */
+    transform: translateY(min(0px, calc(-100% + 301px))) scale(1.03);
 }
 
 /* Glassmorphic Tags */
@@ -712,6 +712,7 @@ body::after {
 }
 
 .timeline-date {
+    grid-column: 1;
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
     font-size: 1.1rem;
@@ -748,6 +749,7 @@ body::after {
 }
 
 .timeline-details {
+    grid-column: 3;
     padding-left: 1rem;
 }
 
@@ -986,6 +988,7 @@ body::after {
         opacity: 0.8;
     }
     .timeline-date {
+        grid-column: 1;
         text-align: left;
         padding-left: 3rem;
     }
@@ -996,6 +999,7 @@ body::after {
         margin-top: -24px;
     }
     .timeline-details {
+        grid-column: 1;
         padding-left: 3rem;
     }
     
