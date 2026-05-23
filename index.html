@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pete Navato | Portfolio & Resume</title>
+    <script>document.documentElement.classList.add('js-enabled');</script>
     
     <!-- Premium Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,15 +18,17 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <!-- Cinematic Grid Overlay -->
+    <div class="bg-grid-overlay"></div>
 
     <!-- Header Navigation -->
     <header class="header">
-        <a href="#" class="logo">PORTFOLIO</a>
+        <a href="#" class="logo magnetic-target">P. NAVATO</a>
         <nav class="nav">
-            <a href="#about" class="nav-link">About</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#about" class="nav-link magnetic-target">About</a>
+            <a href="#projects" class="nav-link magnetic-target">Projects</a>
+            <a href="#experience" class="nav-link magnetic-target">Experience</a>
+            <a href="#contact" class="nav-link magnetic-target">Contact</a>
         </nav>
     </header>
 
@@ -41,7 +44,7 @@
                 </div>
                 <div class="hero-content">
                     <h1 class="hero-title">HI<br>I'M PETE</h1>
-                    <p class="hero-subtitle">A 2nd year Information Systems Student at DLSU Manila.</p>
+                    <p class="hero-subtitle">Information Systems student at DLSU Manila. Specializing in frontend performance, interactive motion, and high-fidelity product design.</p>
                 </div>
             </div>
         </section>
@@ -51,9 +54,7 @@
             <div class="section-container">
                 <h2 class="section-title">About Me</h2>
                 <p class="about-text">
-                    Information Systems student at De la Salle University. I am passionate about building 
-                    interactive web interfaces and exploring the intersection of technology and creativity.
-                    Outside coding, I play football, and I love music.
+                    Bridging the gap between systematic business logic and modern frontend engineering. I craft immersive, fast, and accessible web systems that combine technical precision with high-end aesthetic detail.
                 </p>
             </div>
         </section>
@@ -66,8 +67,22 @@
                     <!-- Project Card 1 -->
                     <div class="project-card" id="card-1">
                         <div class="card-info">
-                            <h3>01 / Hair Salon Inventory System</h3>
-                            <p>Inventory management system for local hair salons.</p>
+                            <span class="project-number">PROJECT 01</span>
+                            <h3>Hair Salon Inventory System</h3>
+                            <p>A bespoke database-driven logistics and inventory dashboard engineered for hair salon franchises. Features automated supply replenishment, real-time tracking, and analytics.</p>
+                            <div class="project-tags">
+                                <span class="tag">Database</span>
+                                <span class="tag">UI/UX Design</span>
+                                <span class="tag">Inventory Control</span>
+                                <span class="tag">Management</span>
+                            </div>
+                            <a href="#" class="project-link magnetic-target">
+                                <span>Explore System</span>
+                                <svg class="arrow-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
                         </div>
                         <div class="card-image">
                             <div class="browser-header">
@@ -87,8 +102,22 @@
                     <!-- Project Card 2 -->
                     <div class="project-card" id="card-2">
                         <div class="card-info">
-                            <h3>02 / Green Property Exchange</h3>
-                            <p>A property manager simulator using Java.</p>
+                            <span class="project-number">PROJECT 02</span>
+                            <h3>Green Property Exchange</h3>
+                            <p>An object-oriented environmental simulator modeling ecological property exchanges. Evaluates algorithms for resource balancing and real-time booking reservation management.</p>
+                            <div class="project-tags">
+                                <span class="tag">Java</span>
+                                <span class="tag">OOP Simulator</span>
+                                <span class="tag">Algorithms</span>
+                                <span class="tag">Green Tech</span>
+                            </div>
+                            <a href="#" class="project-link magnetic-target">
+                                <span>View Simulator</span>
+                                <svg class="arrow-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </a>
                         </div>
                         <div class="card-image">
                             <div class="browser-header">
@@ -99,7 +128,7 @@
                                 </div>
                                 <div class="browser-address">green-exchange.pete.dev</div>
                             </div>
-                            <div class="browser-content crop-native-bar">
+                            <div class="browser-content">
                                 <img src="images/Green_Property_Exchange.png" alt="Green Property Exchange Screenshot">
                             </div>
                         </div>
@@ -113,18 +142,19 @@
             <div class="section-container">
                 <h2 class="section-title">Resume & Experience</h2>
                 <div class="timeline">
+                    <div class="timeline-progress-line"></div>
                     <div class="timeline-item">
                         <span class="timeline-date">2024 - Present</span>
                         <div class="timeline-details">
                             <h4>Lead Creative Developer</h4>
-                            <p>Building high-performance interactive websites.</p>
+                            <p>Architecting high-performance interactive interfaces, designing custom animation libraries, and optimizing Core Web Vitals to elevate digital brand presence.</p>
                         </div>
                     </div>
                     <div class="timeline-item">
                         <span class="timeline-date">2022 - 2024</span>
                         <div class="timeline-details">
                             <h4>UI/UX Developer</h4>
-                            <p>Crafting sleek design systems and front-end architectures.</p>
+                            <p>Engineered scalable design systems and modular frontend architectures. Collaborated on user research to translate complex workflows into intuitive, minimalist user journeys.</p>
                         </div>
                     </div>
                 </div>
@@ -134,8 +164,34 @@
         <!-- Contact / Footer -->
         <section id="contact" class="contact-section">
             <div class="section-container">
-                <h2 class="contact-title">Let's build something exceptional.</h2>
-                <a href="mailto:your.email@domain.com" class="contact-button">Get In Touch</a>
+                <div class="contact-grid">
+                    <div class="contact-left">
+                        <h2 class="contact-title">Let's build something exceptional.</h2>
+                        <p class="contact-tagline">Open for collaboration, freelance opportunities, and technical roles. Let's discuss your next project.</p>
+                        <a href="mailto:pete.navato@gmail.com" class="contact-button magnetic-target">Get In Touch</a>
+                    </div>
+                    <div class="contact-right">
+                        <div class="footer-info-block">
+                            <h5>Local Time</h5>
+                            <div class="local-time-wrapper">
+                                <span class="pulse-dot"></span>
+                                <span id="local-time">--:--:-- PHT</span>
+                            </div>
+                        </div>
+                        <div class="footer-info-block">
+                            <h5>Connect</h5>
+                            <div class="social-links">
+                                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link magnetic-target">GitHub</a>
+                                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link magnetic-target">LinkedIn</a>
+                                <a href="mailto:pete.navato@gmail.com" class="social-link magnetic-target">Email</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="copyright">© 2026 Pete Navato. All rights reserved.</p>
+                    <p class="credits">Designed & Engineered by Pete Navato</p>
+                </div>
             </div>
         </section>
 
