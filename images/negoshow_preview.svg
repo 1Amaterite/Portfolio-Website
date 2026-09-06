@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="neg-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0b10"/>
+      <stop offset="100%" stop-color="#12141e"/>
+    </linearGradient>
+    <linearGradient id="neg-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="neg-card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#181a26"/>
+      <stop offset="100%" stop-color="#12131d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="800" height="500" fill="url(#neg-bg)"/>
+
+  <!-- Top App Navigation -->
+  <rect x="0" y="0" width="800" height="52" fill="#11131c" stroke="#23263a" stroke-width="1"/>
+  <rect x="24" y="16" width="20" height="20" rx="6" fill="url(#neg-accent)"/>
+  <text x="54" y="30" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="700">Ne-goshow</text>
+  <text x="135" y="30" fill="#6366f1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="600">ADMIN MVP</text>
+  
+  <rect x="230" y="14" width="260" height="26" rx="6" fill="#181a27" stroke="#25293d" stroke-width="1"/>
+  <text x="245" y="31" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11">Search bulletins, tags, authors...</text>
+  
+  <circle cx="730" cy="26" r="14" fill="#1e2235"/>
+  <circle cx="762" cy="26" r="14" fill="#2e344e"/>
+
+  <!-- Left Sidebar -->
+  <rect x="0" y="52" width="180" height="448" fill="#0d0e17" stroke="#1f2234" stroke-width="1"/>
+  
+  <rect x="14" y="72" width="152" height="32" rx="6" fill="#1d2033"/>
+  <text x="36" y="92" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600">Bulletin Feed</text>
+
+  <text x="36" y="132" fill="#818cf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">Publishing Queue</text>
+  <rect x="140" y="120" width="22" height="16" rx="8" fill="#312e81"/>
+  <text x="147" y="132" fill="#a5b4fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-weight="700">4</text>
+
+  <text x="36" y="172" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">Validation Logs</text>
+  <text x="36" y="212" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">User Roles</text>
+  <text x="36" y="252" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12">Database State</text>
+
+  <!-- Main Content Area -->
+  <!-- Stats row -->
+  <g transform="translate(204, 72)">
+    <rect width="180" height="74" rx="10" fill="url(#neg-card)" stroke="#23273c" stroke-width="1"/>
+    <text x="16" y="26" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11">Active Bulletins</text>
+    <text x="16" y="56" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="700">128</text>
+    <text x="120" y="56" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="600">+12%</text>
+
+    <rect x="194" width="180" height="74" rx="10" fill="url(#neg-card)" stroke="#23273c" stroke-width="1"/>
+    <text x="210" y="26" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11">Pending Approvals</text>
+    <text x="210" y="56" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="700">7</text>
+    <text x="312" y="56" fill="#f59e0b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="600">Action Req.</text>
+
+    <rect x="388" width="184" height="74" rx="10" fill="url(#neg-card)" stroke="#23273c" stroke-width="1"/>
+    <text x="404" y="26" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11">Supabase Sync</text>
+    <text x="404" y="56" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" font-weight="700">Online 99.9%</text>
+  </g>
+
+  <!-- Bulletin Table -->
+  <g transform="translate(204, 166)">
+    <rect width="572" height="310" rx="10" fill="#131520" stroke="#222538" stroke-width="1"/>
+    
+    <!-- Table Header -->
+    <rect x="0" y="0" width="572" height="40" rx="10" fill="#171926"/>
+    <text x="20" y="25" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="600">BULLETIN TITLE</text>
+    <text x="240" y="25" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="600">CATEGORY</text>
+    <text x="360" y="25" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="600">STATUS</text>
+    <text x="475" y="25" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="600">ACTIONS</text>
+    <line x1="0" y1="40" x2="572" y2="40" stroke="#24283c" stroke-width="1"/>
+
+    <!-- Row 1 -->
+    <text x="20" y="74" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600">Tech Summit 2026 Registration</text>
+    <text x="20" y="90" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10">Author: Admin_IS • 2 hrs ago</text>
+    <rect x="240" y="66" width="68" height="20" rx="4" fill="#1e2238"/>
+    <text x="247" y="80" fill="#93c5fd" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10">Campus</text>
+    <rect x="360" y="66" width="62" height="20" rx="10" fill="#064e3b"/>
+    <text x="372" y="80" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-weight="600">Published</text>
+    <rect x="475" y="65" width="56" height="22" rx="4" fill="#2a2e46"/>
+    <text x="488" y="80" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10">Edit</text>
+    <line x1="0" y1="104" x2="572" y2="104" stroke="#1d2033" stroke-width="1"/>
+
+    <!-- Row 2 -->
+    <text x="20" y="138" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600">Annual Academic Exhibition Guidelines</text>
+    <text x="20" y="154" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10">Author: Coordinator • 5 hrs ago</text>
+    <rect x="240" y="130" width="76" height="20" rx="4" fill="#2d2238"/>
+    <text x="247" y="144" fill="#f472b6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10">Academic</text>
+    <rect x="360" y="130" width="62" height="20" rx="10" fill="#451a03"/>
+    <text x="374" y="144" fill="#fbbf24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-weight="600">Review</text>
+    <rect x="475" y="129" width="64" height="22" rx="4" fill="url(#neg-accent)"/>
+    <text x="484" y="144" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-weight="600">Approve</text>
+    <line x1="0" y1="168" x2="572" y2="168" stroke="#1d2033" stroke-width="1"/>
+
+    <!-- Row 3 -->
+    <text x="20" y="202" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600">Futsal Tournament Schedule &amp; Brackets</text>
+    <text x="20" y="218" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10">Author: Athletics • 1 day ago</text>
+    <rect x="240" y="194" width="60" height="20" rx="4" fill="#1e2c38"/>
+    <text x="247" y="208" fill="#38bdf8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10">Sports</text>
+    <rect x="360" y="194" width="62" height="20" rx="10" fill="#064e3b"/>
+    <text x="372" y="208" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-weight="600">Published</text>
+    <rect x="475" y="193" width="56" height="22" rx="4" fill="#2a2e46"/>
+    <text x="488" y="208" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10">Edit</text>
+    <line x1="0" y1="232" x2="572" y2="232" stroke="#1d2033" stroke-width="1"/>
+
+    <!-- Row 4 -->
+    <text x="20" y="266" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="600">IT Infrastructure Maintenance Notice</text>
+    <text x="20" y="282" fill="#64748b" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10">Author: SysAdmin • 2 days ago</text>
+    <rect x="240" y="258" width="68" height="20" rx="4" fill="#282238"/>
+    <text x="247" y="272" fill="#c084fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10">System</text>
+    <rect x="360" y="258" width="62" height="20" rx="10" fill="#064e3b"/>
+    <text x="372" y="272" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-weight="600">Published</text>
+    <rect x="475" y="257" width="56" height="22" rx="4" fill="#2a2e46"/>
+    <text x="488" y="272" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10">Edit</text>
+  </g>
+</svg>

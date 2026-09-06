@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="gc-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a100d"/>
+      <stop offset="100%" stop-color="#101915"/>
+    </linearGradient>
+    <linearGradient id="gc-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="gc-card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#13231c"/>
+      <stop offset="100%" stop-color="#0e1713"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="800" height="500" fill="url(#gc-bg)"/>
+
+  <!-- Top App Navigation -->
+  <rect x="0" y="0" width="800" height="52" fill="#0d1612" stroke="#1c3027" stroke-width="1"/>
+  <circle cx="34" cy="26" r="12" fill="url(#gc-accent)"/>
+  <polygon points="30,20 40,26 30,32" fill="#ffffff"/>
+  <text x="56" y="30" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="14" font-weight="800">GUECO CUP 2026</text>
+  <text x="210" y="30" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11" font-weight="600">OPERATIONS CONTROL</text>
+
+  <!-- Top Right Badges -->
+  <rect x="660" y="14" width="115" height="24" rx="12" fill="#064e3b" stroke="#059669" stroke-width="1"/>
+  <circle cx="674" cy="26" r="4" fill="#34d399"/>
+  <text x="686" y="30" fill="#a7f3d0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-weight="700">60+ ATHLETES</text>
+
+  <!-- Top Metric Cards -->
+  <g transform="translate(24, 70)">
+    <rect width="176" height="74" rx="10" fill="url(#gc-card)" stroke="#1a382c" stroke-width="1"/>
+    <text x="16" y="26" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11">Tournament Roster</text>
+    <text x="16" y="56" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="700">8 Teams</text>
+    <text x="110" y="56" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11">Registered</text>
+
+    <rect x="192" width="176" height="74" rx="10" fill="url(#gc-card)" stroke="#1a382c" stroke-width="1"/>
+    <text x="208" y="26" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11">Match Logistics</text>
+    <text x="208" y="56" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="700">16 Fixtures</text>
+    <text x="312" y="56" fill="#10b981" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11">Automated</text>
+
+    <rect x="384" width="176" height="74" rx="10" fill="url(#gc-card)" stroke="#1a382c" stroke-width="1"/>
+    <text x="400" y="26" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11">Live Attendance Rate</text>
+    <text x="400" y="56" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="700">98.4%</text>
+    <text x="496" y="56" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11">PHT Synced</text>
+
+    <rect x="576" width="176" height="74" rx="10" fill="url(#gc-card)" stroke="#1a382c" stroke-width="1"/>
+    <text x="592" y="26" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11">Payment Tracking</text>
+    <text x="592" y="56" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="24" font-weight="700">100%</text>
+    <text x="674" y="56" fill="#6ee7b7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="11">Reconciled</text>
+  </g>
+
+  <!-- Main Tournament Bracket & Fixtures Schedule -->
+  <g transform="translate(24, 164)">
+    <rect width="752" height="312" rx="12" fill="#0f1914" stroke="#1d362a" stroke-width="1"/>
+    
+    <!-- Header of Dashboard -->
+    <rect x="0" y="0" width="752" height="42" rx="12" fill="#13231c"/>
+    <text x="24" y="26" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="12" font-weight="700">MATCHMAKING SCHEDULE &amp; REAL-TIME SCORES</text>
+    <rect x="620" y="10" width="112" height="22" rx="4" fill="#064e3b"/>
+    <text x="632" y="25" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-weight="700">LIVE FEED • COURT 1</text>
+    <line x1="0" y1="42" x2="752" y2="42" stroke="#1d362a" stroke-width="1"/>
+
+    <!-- Match Box 1 (Finished) -->
+    <g transform="translate(24, 60)">
+      <rect width="336" height="88" rx="8" fill="#14211a" stroke="#254234" stroke-width="1"/>
+      <text x="16" y="22" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-weight="600">GROUP A • MATCH 01 [FINAL]</text>
+      
+      <text x="16" y="50" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700">FC Striker Elite</text>
+      <text x="240" y="50" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="700">4</text>
+
+      <text x="16" y="74" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Animo Knights</text>
+      <text x="240" y="74" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15">2</text>
+
+      <rect x="270" y="38" width="52" height="26" rx="4" fill="#064e3b"/>
+      <text x="280" y="54" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-weight="600">FT</text>
+    </g>
+
+    <!-- Match Box 2 (Live In Progress) -->
+    <g transform="translate(392, 60)">
+      <rect width="336" height="88" rx="8" fill="#14261c" stroke="#10b981" stroke-width="1.5"/>
+      <text x="16" y="22" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-weight="700">SEMIFINALS • LIVE NOW (28')</text>
+      
+      <text x="16" y="50" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700">Archer United</text>
+      <text x="240" y="50" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="700">3</text>
+
+      <text x="16" y="74" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="700">Green Rovers</text>
+      <text x="240" y="74" fill="#34d399" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="15" font-weight="700">3</text>
+
+      <rect x="270" y="38" width="52" height="26" rx="4" fill="#047857"/>
+      <text x="278" y="54" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-weight="700">LIVE</text>
+    </g>
+
+    <!-- Match Box 3 (Upcoming) -->
+    <g transform="translate(24, 168)">
+      <rect width="336" height="88" rx="8" fill="#14211a" stroke="#254234" stroke-width="1"/>
+      <text x="16" y="22" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-weight="600">GROUP B • MATCH 04 [SCHEDULED]</text>
+      
+      <text x="16" y="50" fill="#e5e7eb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Taft Dynamos</text>
+      <text x="240" y="50" fill="#6b7280" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">-</text>
+
+      <text x="16" y="74" fill="#e5e7eb" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Velocity FC</text>
+      <text x="240" y="74" fill="#6b7280" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">-</text>
+
+      <rect x="270" y="38" width="52" height="26" rx="4" fill="#1f3429"/>
+      <text x="276" y="54" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10">16:30</text>
+    </g>
+
+    <!-- Match Box 4 (Upcoming) -->
+    <g transform="translate(392, 168)">
+      <rect width="336" height="88" rx="8" fill="#14211a" stroke="#254234" stroke-width="1"/>
+      <text x="16" y="22" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-weight="600">CHAMPIONSHIP MATCH [EST. 18:00]</text>
+      
+      <text x="16" y="50" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Winner Semifinal 1</text>
+      <text x="240" y="50" fill="#6b7280" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">-</text>
+
+      <text x="16" y="74" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">Winner Semifinal 2</text>
+      <text x="240" y="74" fill="#6b7280" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13">-</text>
+
+      <rect x="270" y="38" width="52" height="26" rx="4" fill="#1f3429"/>
+      <text x="276" y="54" fill="#9ca3af" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10">FINAL</text>
+    </g>
+  </g>
+</svg>

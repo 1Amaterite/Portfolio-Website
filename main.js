@@ -146,6 +146,29 @@ projectCardsElements.forEach(card => {
     }
 });
 
+// --- Skills & Leadership Cards Reveal Animation ---
+const contentCards = document.querySelectorAll('.skill-category-card, .leadership-card');
+contentCards.forEach(card => {
+    if (!prefersReducedMotion) {
+        gsap.fromTo(card,
+            { opacity: 0, y: 35 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 88%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+    } else {
+        gsap.set(card, { opacity: 1, y: 0 });
+    }
+});
+
 // --- About Section Word-by-Word Reveal ---
 const aboutSpans = document.querySelectorAll('.about-text span');
 if (aboutSpans.length > 0) {
