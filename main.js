@@ -146,26 +146,26 @@ projectCardsElements.forEach(card => {
     }
 });
 
-// --- Skills & Leadership Cards Reveal Animation ---
-const contentCards = document.querySelectorAll('.skill-category-card, .leadership-card');
-contentCards.forEach(card => {
+// --- Skills & Leadership Reveal Animation ---
+const revealedElements = document.querySelectorAll('.skill-row, .leadership-card');
+revealedElements.forEach(el => {
     if (!prefersReducedMotion) {
-        gsap.fromTo(card,
-            { opacity: 0, y: 35 },
+        gsap.fromTo(el,
+            { opacity: 0, y: 24 },
             {
                 opacity: 1,
                 y: 0,
-                duration: 0.8,
+                duration: 0.7,
                 ease: "power3.out",
                 scrollTrigger: {
-                    trigger: card,
-                    start: "top 88%",
+                    trigger: el,
+                    start: "top 90%",
                     toggleActions: "play none none none"
                 }
             }
         );
     } else {
-        gsap.set(card, { opacity: 1, y: 0 });
+        gsap.set(el, { opacity: 1, y: 0 });
     }
 });
 

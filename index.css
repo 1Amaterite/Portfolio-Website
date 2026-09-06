@@ -320,78 +320,64 @@ body::after {
     margin-right: 0.22em;
 }
 
-/* --- 5.5 Skills Section --- */
+/* --- 5.5 Skills Section (Typography-First Matrix) --- */
 .skills-section {
     position: relative;
     z-index: 5;
     background-color: var(--bg-color);
 }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-}
-
-.skill-category-card {
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    padding: 2.5rem 2rem;
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    transition: border-color 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+.skills-matrix {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    border-top: 1px solid var(--border-color);
 }
 
-.skill-category-card:hover {
-    border-color: rgba(255, 255, 255, 0.15);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 255, 255, 0.04);
+.skill-row {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    padding: 2.2rem 0;
+    border-bottom: 1px solid var(--border-color);
+    align-items: baseline;
+    gap: 2rem;
+    transition: background-color 0.3s ease;
 }
 
-.skill-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+.skill-row:hover {
+    background-color: rgba(255, 255, 255, 0.015);
 }
 
-.skill-header h3 {
+.skill-category {
     font-family: 'Outfit', sans-serif;
-    font-size: 1.35rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    letter-spacing: -0.3px;
-    background: linear-gradient(135deg, #ffffff 0%, #d1d5db 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.2px;
+    color: #ffffff;
 }
 
-.skill-chips {
+.skill-items {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
+    align-items: center;
+    gap: 0.65rem 0.85rem;
+    color: #d1d5db;
+    font-size: 1.05rem;
+    font-weight: 300;
+    line-height: 1.6;
 }
 
-.skill-chip {
-    font-size: 0.8rem;
-    font-weight: 500;
-    padding: 0.45rem 1rem;
-    border-radius: 100px;
-    background: rgba(255, 255, 255, 0.035);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    color: #e4e4e7;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+.skill-items span {
+    transition: color 0.2s ease;
 }
 
-.skill-category-card:hover .skill-chip {
-    border-color: rgba(255, 255, 255, 0.12);
-    background: rgba(255, 255, 255, 0.06);
+.skill-items span:not(.sep):hover {
     color: #ffffff;
+}
+
+.skill-items .sep {
+    color: rgba(255, 255, 255, 0.18);
+    font-size: 0.85rem;
+    user-select: none;
 }
 
 /* --- 6. Stacking Project Cards (Perspective Look) --- */
@@ -732,41 +718,18 @@ body::after {
     transform: translateX(5px);
 }
 
-/* Status Badges for Active MVP & Operational Systems */
-.project-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
+/* Project Status Meta (Clean & Minimal) */
+.project-status-tag {
+    display: inline-block;
     font-family: 'Outfit', sans-serif;
     font-weight: 600;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #e4e4e7;
-    padding: 0.45rem 1.1rem;
-    border-radius: 100px;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    width: fit-content;
+    color: #a1a1aa;
     margin-top: 0.8rem;
-}
-
-.status-indicator {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background-color: #34d399;
-    box-shadow: 0 0 8px #34d399;
-}
-
-.status-indicator.amber {
-    background-color: #f59e0b;
-    box-shadow: 0 0 8px #f59e0b;
-}
-
-.status-indicator.blue {
-    background-color: #60a5fa;
-    box-shadow: 0 0 8px #60a5fa;
+    border-left: 2px solid rgba(255, 255, 255, 0.25);
+    padding-left: 0.65rem;
 }
 
 /* --- 7. Interactive Timeline / Experience --- */
@@ -1246,13 +1209,19 @@ body::after {
         margin-bottom: 2rem;
     }
     
-    /* Skills & Leadership Grid Mobile Adjustments */
-    .skills-grid, .leadership-grid {
+    /* Skills Matrix & Leadership Mobile Adjustments */
+    .skill-row {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+        padding: 1.6rem 0;
+    }
+    
+    .leadership-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
     
-    .skill-category-card, .leadership-card {
+    .leadership-card {
         padding: 2rem 1.6rem;
     }
 
